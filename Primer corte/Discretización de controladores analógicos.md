@@ -37,19 +37,31 @@ $$C(z) = T\left\lbrace \frac{z}{2z - 1} + \frac{4z}{4z - 1}\right\rbrace$$
 ## 2. Método de invarianza al paso
 Se refiere a un método en el que se asegura que la respuesta al escalón del sistema discreto sea igual a la del sistema continuo.
 Este método es menos común que la invarianza de impulso y se utiliza principalmente en aplicaciones donde la respuesta al escalón es más crítica que la respuesta al impulso.
-![Invarianza al paso](www.howcodex.com/assets/how_codex/images/detail/principles_of_communication/images/quantization.jpg)
-$$C(z) = \frac{z-1}{z}Z\left\lbrace{\mathcal{L}^{-1} \left\lbraceC(s) \frac{1}{s} \right\rbrace\right\rbrace$$
+![Invarianza al paso](./img/euler%20atras.png)
+
+$$C(z) = \frac{z-1}{z}Z\left\lbrace\mathcal{L}^{-1} \left\lbrace C(s) \frac{1}{s} \right\rbrace\right\rbrace$$
+
 ### 💡 Ejemplo 2
 $$C(s) = \frac{1}{s^3 + 6s^2 + 11s + 6}$$
+
 **Dividir por s para aplicar el escalón:**
+
 $$\frac{C(s)}{s} = \frac{1}{s(s^3 + 6s^2 + 11s + 6)}$$
+
 **Aplicando fracciones parciales:**
+
 $$\frac{C(s)}{s} = \frac{1}{6s} - \frac{1}{2(s+1)} + \frac{1}{2(s+2)} - \frac{1}{6(s+3)}$$
+
 **Transformada inversa de Laplace:**
+
 $$\mathcal{L}^{-1}\left\lbrace\frac{C(s)}{s}\right\rbrace = \frac{1}{6} - \frac{1}{2}e^{-t} + \frac{1}{2}e^{-2t} - \frac{1}{6}e^{-3t}$$
+
 **Resolviendo por tablas:**
+
 $$Z\left\lbrace\mathcal{L}^{-1}\left\lbrace\frac{C(s)}{s}\right\rbrace\right\rbrace}=\frac{1}{6} \cdot \frac{z}{z-1} - \frac{1}{2} \cdot \frac{z}{z - e^{-1}} + \frac{1}{2} \cdot \frac{z}{z - e^{-2}} - \frac{1}{6} \cdot \frac{z}{z - e^{-3}}$$
+
 **Por definición:**
+
 $$C(z)=\frac{z-1}{z}\left\lbracefrac{1}{6} \cdot \frac{z}{z-1} - \frac{1}{2} \cdot \frac{z}{z - e^{-1}} + \frac{1}{2} \cdot \frac{z}{z - e^{-2}} - \frac{1}{6} \cdot \frac{z}{z - e^{-3}}\right\rbrace$
 
 $$C(z)=\frac{z^4 - 6z^3 + 11z^2 - 6z}{6(z - e^{-1})(z - e^{-2})(z - e^{-3})}$$
