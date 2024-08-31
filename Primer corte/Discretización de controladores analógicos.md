@@ -40,7 +40,7 @@ $$C(z) = T\left\lbrace \frac{z}{2z - 1} + \frac{4z}{4z - 1}\right\rbrace$$
 ## 2. Método de invarianza al paso
 Se refiere a un método en el que se asegura que la respuesta al escalón del sistema discreto sea igual a la del sistema continuo.
 Este método es menos común que la invarianza de impulso y se utiliza principalmente en aplicaciones donde la respuesta al escalón es más crítica que la respuesta al impulso.
-![Invarianza al paso](./img/euler%20atras.png)
+![Invarianza al paso](./img/paso.jpg)
 
 $$C(z) = \frac{z-1}{z}Z\left\lbrace\mathcal{L}^{-1} \left\lbrace C(s) \frac{1}{s} \right\rbrace\right\rbrace$$
 
