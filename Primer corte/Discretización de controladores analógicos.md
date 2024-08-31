@@ -6,7 +6,7 @@ La discretización convierte un sistema de control analógico continuo en uno di
 Es una técnica utilizada en la conversión de sistemas continuos a sistemas discretos, asegurando que la respuesta al impulso del filtro digital sea igual a la del filtro analógico, escalada por la tasa de muestreo, es decir que al aplicar un impulso la salida del sistema es igual a la función de transferencia.
 ![Invarianza al impulso](https://es.mathworks.com/help/signal/ref/analoganddigitalimpulseresponsesexample_02_es.png)
 
-$$C(z) = TZ\left\{ \mathcal{L}^{-1}\{C(s)\} \mid_{t=KT} \right\}$$
+$$C(z) = TZ\left\lbrace\{ \mathcal{L}^{-1}\{C(s)\} \mid_{t=KT} \right\}$$
 ### 💡 Ejemplo 1
 $$C(s) = \frac{5s + 7}{s^2 + 4s + 3}$$
 **Aplicando fracciones parciales:**
