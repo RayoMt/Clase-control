@@ -61,13 +61,14 @@ $$\mathcal{L}^{-1}\left\lbrace\frac{C(s)}{s}\right\rbrace = \frac{1}{6} - \frac{
 
 **Resolviendo por tablas:**
 
-$$Z\left\lbrace\mathcal{L}^{-1}\left\lbrace\frac{C(s)}{s}\right\rbrace\right\rbrace}=\frac{1}{6} \cdot \frac{z}{z-1} - \frac{1}{2} \cdot \frac{z}{z - e^{-1}} + \frac{1}{2} \cdot \frac{z}{z - e^{-2}} - \frac{1}{6} \cdot \frac{z}{z - e^{-3}}$$
+$$Z\left\lbrace\mathcal{L}^{-1}\left\lbrace\frac{C(s)}{s}\right\rbrace\right\rbrace=\frac{1}{6} \cdot \frac{z}{z-1} - \frac{1}{2} \cdot \frac{z}{z - e^{-1}} + \frac{1}{2} \cdot \frac{z}{z - e^{-2}} - \frac{1}{6} \cdot \frac{z}{z - e^{-3}}$$
 
 **Por definición:**
 
-$$C(z)=\frac{z-1}{z}\left\lbracefrac{1}{6} \cdot \frac{z}{z-1} - \frac{1}{2} \cdot \frac{z}{z - e^{-1}} + \frac{1}{2} \cdot \frac{z}{z - e^{-2}} - \frac{1}{6} \cdot \frac{z}{z - e^{-3}}\right\rbrace$
+$$C(z)=\frac{z-1}{z}\left\lbracefrac{1}{6} \cdot \frac{z}{z-1} - \frac{1}{2} \cdot \frac{z}{z - e^{-1}} + \frac{1}{2} \cdot \frac{z}{z - e^{-2}} - \frac{1}{6} \cdot \frac{z}{z - e^{-3}}\right\rbrace$$
 
 $$C(z)=\frac{z^4 - 6z^3 + 11z^2 - 6z}{6(z - e^{-1})(z - e^{-2})(z - e^{-3})}$$
+
 ### Ventajas
 * Asegura que la respuesta del sistema discreto sea idéntica a la del sistema continuo en los instantes de muestreo.
 * Al mantener la invarianza en los puntos de muestreo, se garantiza que las características dinámicas del sistema original se conserven en el sistema discretizado
