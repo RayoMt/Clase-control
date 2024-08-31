@@ -6,7 +6,7 @@ La discretización convierte un sistema de control analógico continuo en uno di
 Es una técnica utilizada en la conversión de sistemas continuos a sistemas discretos, asegurando que la respuesta al impulso del filtro digital sea igual a la del filtro analógico, escalada por la tasa de muestreo, es decir que al aplicar un impulso la salida del sistema es igual a la función de transferencia.
 ![Invarianza al impulso](https://es.mathworks.com/help/signal/ref/analoganddigitalimpulseresponsesexample_02_es.png)
 
-$$C(z) = TZ\left\lbrace\{ \mathcal{L}^{-1}\{C(s)\} \mid_{t=KT} \right\rbrace\}$$
+$$C(z) = TZ\left\lbrace\mathcal{L}^{-1}\{C(s)\} \mid_{t=KT} \right\rbrace$$
 ### 💡 Ejemplo 1
 $$C(s) = \frac{5s + 7}{s^2 + 4s + 3}$$
 **Aplicando fracciones parciales:**
@@ -17,7 +17,7 @@ $$\mathcal{L}^{-1}\{C(s)\}=e^{-t} + 4e^{-3t}$$
 $$\mathcal{L}^{-1}\{C(s)\}\mid_{t=kT}=e^{-kT} + 4e^{-3kT}$$
 $$C(z)=TZ\{e^{-kT} + 4e^{-3kT}\}$$
 **Resolviendo por tablas:**
-$$C(z) = T\left\lbrace\{ \frac{z}{2z - 1} + \frac{4z}{4z - 1}\right\rbrace\}$$
+$$C(z) = T\left\lbrace \frac{z}{2z - 1} + \frac{4z}{4z - 1}\right\rbrace$$
 ### Ventajas
 * Preserva la forma de la respuesta del sistema analógico
 * es simple de implementar
@@ -29,7 +29,7 @@ $$C(z) = T\left\lbrace\{ \frac{z}{2z - 1} + \frac{4z}{4z - 1}\right\rbrace\}$$
 Se refiere a un método en el que se asegura que la respuesta al escalón del sistema discreto sea igual a la del sistema continuo.
 Este método es menos común que la invarianza de impulso y se utiliza principalmente en aplicaciones donde la respuesta al escalón es más crítica que la respuesta al impulso.
 ![Invarianza al paso](www.howcodex.com/assets/how_codex/images/detail/principles_of_communication/images/quantization.jpg)
-$$C(z) = \frac{z-1}{z}Z\left\lbrace \{\mathcal{L}^{-1} \left\lbrace\{C(s) \frac{1}{s} \right\rbrace\}\right\rbrace\}$$
+$$C(z) = \frac{z-1}{z}Z\left\lbrace{\mathcal{L}^{-1} \left\lbraceC(s) \frac{1}{s} \right\rbrace\right\rbrace$$
 ### 💡 Ejemplo 2
 $$C(s) = \frac{1}{s^3 + 6s^2 + 11s + 6}$$
 **Dividir por s para aplicar el escalón:**
@@ -37,11 +37,11 @@ $$\frac{C(s)}{s} = \frac{1}{s(s^3 + 6s^2 + 11s + 6)}$$
 **Aplicando fracciones parciales:**
 $$\frac{C(s)}{s} = \frac{1}{6s} - \frac{1}{2(s+1)} + \frac{1}{2(s+2)} - \frac{1}{6(s+3)}$$
 **Transformada inversa de Laplace:**
-$$\mathcal{L}^{-1}\left\lbrace\{\frac{C(s)}{s}\right\rbrace\} = \frac{1}{6} - \frac{1}{2}e^{-t} + \frac{1}{2}e^{-2t} - \frac{1}{6}e^{-3t}$$
+$$\mathcal{L}^{-1}\left\lbrace\frac{C(s)}{s}\right\rbrace = \frac{1}{6} - \frac{1}{2}e^{-t} + \frac{1}{2}e^{-2t} - \frac{1}{6}e^{-3t}$$
 **Resolviendo por tablas:**
-$$Z\left\lbrace\{\mathcal{L}^{-1}\left\lbrace\{\frac{C(s)}{s}\right\rbrace\}\right\rbrace \}=\frac{1}{6} \cdot \frac{z}{z-1} - \frac{1}{2} \cdot \frac{z}{z - e^{-1}} + \frac{1}{2} \cdot \frac{z}{z - e^{-2}} - \frac{1}{6} \cdot \frac{z}{z - e^{-3}}$$
+$$Z\left\lbrace\mathcal{L}^{-1}\left\lbrace\frac{C(s)}{s}\right\rbrace\right\rbrace}=\frac{1}{6} \cdot \frac{z}{z-1} - \frac{1}{2} \cdot \frac{z}{z - e^{-1}} + \frac{1}{2} \cdot \frac{z}{z - e^{-2}} - \frac{1}{6} \cdot \frac{z}{z - e^{-3}}$$
 **Por definición:**
-$$C(z)=\frac{z-1}{z}\left\lbrace(\frac{1}{6} \cdot \frac{z}{z-1} - \frac{1}{2} \cdot \frac{z}{z - e^{-1}} + \frac{1}{2} \cdot \frac{z}{z - e^{-2}} - \frac{1}{6} \cdot \frac{z}{z - e^{-3}}\right\rbrace)$$
+$$C(z)=\frac{z-1}{z}\left\lbracefrac{1}{6} \cdot \frac{z}{z-1} - \frac{1}{2} \cdot \frac{z}{z - e^{-1}} + \frac{1}{2} \cdot \frac{z}{z - e^{-2}} - \frac{1}{6} \cdot \frac{z}{z - e^{-3}}\right\rbrace$
 
 $$C(z)=\frac{z^4 - 6z^3 + 11z^2 - 6z}{6(z - e^{-1})(z - e^{-2})(z - e^{-3})}$$
 ### Ventajas
@@ -55,9 +55,9 @@ Este método avanza desde un punto inicial (t_0, y_0) utilizando la pendiente de
 **Para entender el modelo matemático, se parte desde la aproximación discreta de la derivada:**
 $$\frac{d}{dkT}x(kT)=\frac{x(k+1)-x(k)}{T}$$
 **Al aplicar la transformada Z se obtiene:**
-$$Z\left\lbrace\{\frac{x(k+1)-x(k)}{T}\right\rbrace\}=\frac{zX(z)-X(z)}{T}=\frac{z-1}{T}X(z)$$
+$$Z\left\lbrace\frac{x(k+1)-x(k)}{T}\right\rbrace=\frac{zX(z)-X(z)}{T}=\frac{z-1}{T}X(z)$$
 **Sabiendo la transformada de Laplace de una derivada:**
-$$\mathcal{L}\left\lbrace\{ \frac{d}{dx}x(t)\right\rbrace\}=sX(s)$$
+$$\mathcal{L}\left\lbrace \frac{d}{dx}x(t)\right\rbrace=sX(s)$$
 **Se pueden aproximar las dos transformadas:**
 $$sX(s)\approx\frac{z-1}{T}X(z)$$
 **Suponiendo que:**
@@ -72,9 +72,9 @@ A diferencia del caso anterior este método retrocede desde un punto inicial (t_
 **Para entender el modelo matemático, se parte desde la aproximación discreta de la derivada:**
 $$\frac{d}{dkT}x(kT)=\frac{x(k)-x(k-1)}{T}$$
 **Al aplicar la transformada Z se obtiene:**
-$$Z\left\lbrace\{\frac{x(k)-x(k-1)}{T}\right\rbrace\}=\frac{X(z)-z^{-1}X(z)}{T}=\frac{1-z^{-1}}{T}X(z)$$
+$$Z\left\lbrace\frac{x(k)-x(k-1)}{T}\right\rbrace=\frac{X(z)-z^{-1}X(z)}{T}=\frac{1-z^{-1}}{T}X(z)$$
 **Sabiendo la transformada de Laplace de una derivada:**
-$$\mathcal{L}\left\lbrace\{ \frac{d}{dx}x(t)\right\rbrace\}=sX(s)$$
+$$\mathcal{L}\left\lbrace \frac{d}{dx}x(t)\right\rbrace=sX(s)$$
 **Se pueden aproximar las dos transformadas:**
 $$sX(s)\approx\frac{1-z^{-1}}{T}X(z)$$
 **Suponiendo que:**
@@ -119,7 +119,7 @@ Recordar que:
 $$ s \approx \frac{z-1}{Tz}$$
 Se asume el periodo de muestreo $(T)$ como $T=1$, y se sustituye el valor de $s$ a su aproximación.
 
-$$ G(s) = \frac{s + 3}{s^2 + 4s + 5} \approx \frac{\frac{z-1}{z} + 3}{\left\lbrace(\frac{z-1}{z}\right\rbrace)^2 + 4\left\lbrace(\frac{z-1}{z}\right\rbrace) + 5} $$
+$$ G(s) = \frac{s + 3}{s^2 + 4s + 5} \approx \frac{\frac{z-1}{z} + 3}{\left\lbracefrac{z-1}{z}\right\rbrace2 + 4\left\lbracefrac{z-1}{z}\right\rbrace+ 5} $$
 
 
 Simplificando el numerador y el denominador:
