@@ -9,15 +9,24 @@ Es una técnica utilizada en la conversión de sistemas continuos a sistemas dis
 $$C(z) = TZ\left\lbrace\mathcal{L}^{-1}\{C(s)\} \mid_{t=KT} \right\rbrace$$
 ### 💡 Ejemplo 1
 $$C(s) = \frac{5s + 7}{s^2 + 4s + 3}$$
+
 **Aplicando fracciones parciales:**
+
 $$C(s)=\frac{5s + 7}{(s + 1)(s + 3)} = \frac{1}{s + 1} + \frac{4}{s + 3}$$
+
 **Transformada inversa de Laplace:**
+
 $$\mathcal{L}^{-1}\{C(s)\}=e^{-t} + 4e^{-3t}$$
+
 **Discretizar la función:**
+
 $$\mathcal{L}^{-1}\{C(s)\}\mid_{t=kT}=e^{-kT} + 4e^{-3kT}$$
 $$C(z)=TZ\{e^{-kT} + 4e^{-3kT}\}$$
+
 **Resolviendo por tablas:**
+
 $$C(z) = T\left\lbrace \frac{z}{2z - 1} + \frac{4z}{4z - 1}\right\rbrace$$
+
 ### Ventajas
 * Preserva la forma de la respuesta del sistema analógico
 * es simple de implementar
