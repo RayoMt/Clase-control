@@ -56,8 +56,8 @@ Representacion $\frac {3}{4}=0.75v$
 Señal : $0-7 v$
 Bits de representación = 2 bits
 $$2^{10}=1024$$ Cantidad de bits que realizaran la representación o cantidad de simbolos que puede tomar el muestreo 
-Rango analogico : $7-0 =7$
-representacion :$\frac{7}{1023} = 0,006842619$ Es la variacion del voltaje en el que se realizara cada muestreo $2^{10}-1=1023$
+Rango analogico: $7-0 =7$
+representacion: $\frac{7}{1023} = 0,006842619$ Es la variacion del voltaje en el que se realizara cada muestreo $2^{10}-1=1023$
 
 📚Ejemplo 2
 
