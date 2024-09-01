@@ -39,7 +39,7 @@ ___
 ## Ejercicios
 💡
 Señal : $0v-3v$
-bits de represnetación = 2 bits $ 2^{2}= 4 $ posibles simbolos que pueden tomar valores
+bits de represnetación = 2 bits $2^{2}= 4$ posibles simbolos que pueden tomar valores
 Rango analogico  $3-0 = 3v$
 Representacion $\frac {3}{4}=0.75v$
 | voltaje |representacion  |
