@@ -111,7 +111,7 @@ asi indicaremos que es el valor 0100 el que se esta representando en las resiste
 ### Red escalera R2R
 2. - R2R que es mas complicado pero mas exacto
 
-![ CADENA R2R](./img/r2r)
+![ CADENA R2R](./img/r2r.png)
 
 para calcular el valor del voltaje tenemos la siguiente ecucacion
 
