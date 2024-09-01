@@ -39,10 +39,9 @@ ___
 ## Ejercicios
 💡
 Señal : $0v-3v$
-bits de represnetación = 2 bits 
-$$ 2^{2}= 4 $$ posibles simbolos que pueden tomar valores
+bits de represnetación = 2 bits $ 2^{2}= 4 $ posibles simbolos que pueden tomar valores
 Rango analogico  $3-0 = 3v$
-Representacion $$\frac {3}{4}=0.75v$$
+Representacion $\frac {3}{4}=0.75v$
 | voltaje |representacion  |
 |--|--|
 |  0| 00 |
@@ -58,7 +57,7 @@ Señal : $0-7 v$
 Bits de representación = 2 bits
 $$2^{10}=1024$$ Cantidad de bits que realizaran la representación o cantidad de simbolos que puede tomar el muestreo 
 Rango analogico : $7-0 =7$
-representacion :$$\frac{7}{1023} = 0,006842619$$ Es la variacion del voltaje en el que se realizara cada muestreo $2^{10}-1=1023$
+representacion :$\frac{7}{1023} = 0,006842619$ Es la variacion del voltaje en el que se realizara cada muestreo $2^{10}-1=1023$
 
 📚Ejemplo 2
 
