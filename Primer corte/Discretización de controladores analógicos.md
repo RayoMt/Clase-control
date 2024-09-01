@@ -1,6 +1,6 @@
 # Autores:
-* Juan Diego Alvarez Beltran
-* Nicolas Rodriguez Diaz
+* Juan Diego Alvarez Beltran 120688
+* Nicolas Rodriguez Diaz 112572
 
 # Discretización de controladores analógicos
 La discretización convierte un sistema de control analógico continuo en uno digital, buscando la equivalencia del espacio de Laplace en el espacio Z, utilizando diferentes métodos que permiten hallar los valores de la función discreta.
