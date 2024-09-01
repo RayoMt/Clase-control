@@ -7,7 +7,7 @@ La discretización convierte un sistema de control analógico continuo en uno di
 
 ## 1. Método de invarianza al impulso
 Es una técnica utilizada en la conversión de sistemas continuos a sistemas discretos, asegurando que la respuesta al impulso del filtro digital sea igual a la del filtro analógico, escalada por la tasa de muestreo, es decir que al aplicar un impulso la salida del sistema es igual a la función de transferencia.
-![Invarianza al impulso](https://es.mathworks.com/help/signal/ref/analoganddigitalimpulseresponsesexample_02_es.png)
+![Invarianza al impulso](./img/impulso.png)
 
 $$C(z) = TZ\left\lbrace\mathcal{L}^{-1}\{C(s)\} \mid_{t=KT} \right\rbrace$$
 ### 💡 Ejemplo 1
@@ -77,62 +77,101 @@ $$C(z)=\frac{z^4 - 6z^3 + 11z^2 - 6z}{6(z - e^{-1})(z - e^{-2})(z - e^{-3})}$$
 * La aplicación de este método a sistemas no lineales puede ser complicada y no siempre proporciona resultados precisos.
 ## 3. Euler hacia adelante
 Este método avanza desde un punto inicial (t_0, y_0) utilizando la pendiente de la función en ese punto para estimar el valor en el siguiente punto
+
 **Para entender el modelo matemático, se parte desde la aproximación discreta de la derivada:**
+
 $$\frac{d}{dkT}x(kT)=\frac{x(k+1)-x(k)}{T}$$
+
 **Al aplicar la transformada Z se obtiene:**
+
 $$Z\left\lbrace\frac{x(k+1)-x(k)}{T}\right\rbrace=\frac{zX(z)-X(z)}{T}=\frac{z-1}{T}X(z)$$
+
 **Sabiendo la transformada de Laplace de una derivada:**
+
 $$\mathcal{L}\left\lbrace \frac{d}{dx}x(t)\right\rbrace=sX(s)$$
+
 **Se pueden aproximar las dos transformadas:**
+
 $$sX(s)\approx\frac{z-1}{T}X(z)$$
+
 **Suponiendo que:**
+
 $$X(s)=X(z)$$
+
 **Se obtiene:**
+
 $$s\approx\frac{z-1}{T}$$
+
 Cabe aclarar que un controlador estable en tiempo continuo no necesariamente va a ser estable en tiempo discreto.
-![Euler adelante](https://phys.libretexts.org/@api/deki/files/24232/clipboard_ea181e7e4426c763d1d13558b20813cdb.png)
+![Euler adelante](./img/euler%20adelante.png)
 
 ## 4. Euler hacia atrás
 A diferencia del caso anterior este método retrocede desde un punto inicial (t_0, y_0) utilizando la pendiente de la función en ese punto para obtener el valor en el punto anterior, ya no se estima el valor.
 **Para entender el modelo matemático, se parte desde la aproximación discreta de la derivada:**
+
 $$\frac{d}{dkT}x(kT)=\frac{x(k)-x(k-1)}{T}$$
+
 **Al aplicar la transformada Z se obtiene:**
+
 $$Z\left\lbrace\frac{x(k)-x(k-1)}{T}\right\rbrace=\frac{X(z)-z^{-1}X(z)}{T}=\frac{1-z^{-1}}{T}X(z)$$
+
 **Sabiendo la transformada de Laplace de una derivada:**
+
 $$\mathcal{L}\left\lbrace \frac{d}{dx}x(t)\right\rbrace=sX(s)$$
+
 **Se pueden aproximar las dos transformadas:**
+
 $$sX(s)\approx\frac{1-z^{-1}}{T}X(z)$$
+
 **Suponiendo que:**
+
 $$X(s)=X(z)$$
+
 **Se obtiene:**
+
 $$s\approx\frac{1-z^{-1}}{T}$$
+
 **Al multiplicar por z en el numerador y denominador se obtiene:**
+
 $$\frac{z}{z}\cdot\frac{1-z^{-1}}{T}=\frac{z-1}{Tz}$$
+
 **Entonces:**
+
 $$s\approx\frac{z-1}{Tz}$$
+
 En este método un controlador estable en tiempo continuo es estable en tiempo discreto
-![Euler atras](https://phys.libretexts.org/@api/deki/files/24233/clipboard_eda58677183f46fdfcb19ab51e987e06b.png?revision=1)
+![Euler atras](./img/euler%20atras.png)
 
 ## 5. Método trapezoidal "Tustin"
 Este método preserva la estabilidad del sistema y mapea cada punto de la respuesta en frecuencia del filtro continuo a un punto correspondiente en la respuesta en frecuencia del filtro discreto
 **Su formula básica es:**
+
 $$s=\frac{2}{T}\cdot\frac{1-z^{-1}}{1+z^{-1}}$$
+
 **También puede ser:**
+
 $$z=\frac{1+\frac{Ts}{2}}{1-\frac{Ts}{2}}$$
-![Tustin](https://ghsalazar.github.io/assets/images/tustin-2.svg)
+
+![Tustin](./img/tustin.png)
 
 ## 6. Ejercicios
 ### 📚 Ejercicio 1
 Convertir la siguiente función continua a función discreta por medio del método de Euler hacia adelante.
+
 $$ G(s) = \frac{1}{s+2} $$
+
 **Solución**
+
 Recordar que:
+
 $$ s \approx \frac{1 - z^{-1}}{T} $$
+
 Se asume el periodo de muestreo $(T)$ como $T=1$, y se sustituye el valor de $s$ a su aproximación.
 
 $$ G(s) = \frac{1}{s+2} \approx \frac{1}{\frac{1 - z^{-1}}{1} + 2} = \frac{1}{1 - z^{-1} + 2} = \frac{1}{3 - z^{-1}} $$
 
 Ahora se multiplica el numerador y denominador por $z$ para obtener la función discreta.
+
 $$ G(z) = \frac{z}{3z - 1} $$
 
 ### 📚 Ejercicio 2
@@ -141,17 +180,19 @@ Convertir la siguiente función continua a función discreta por medio del méto
 $$ G(s) = \frac{s + 3}{s^2 + 4s + 5} $$
 
 Recordar que:
+
 $$ s \approx \frac{z-1}{Tz}$$
+
 Se asume el periodo de muestreo $(T)$ como $T=1$, y se sustituye el valor de $s$ a su aproximación.
 
 $$ G(s) = \frac{s + 3}{s^2 + 4s + 5} \approx \frac{\frac{z-1}{z} + 3}{\left\lbracefrac{z-1}{z}\right\rbrace2 + 4\left\lbracefrac{z-1}{z}\right\rbrace+ 5} $$
-
 
 Simplificando el numerador y el denominador:
 
 $$ G(z) = \frac{\frac{z-1}{z} + 3}{\frac{(z-1)^2}{z^2} + 4\frac{z-1}{z} + 5} = \frac{z-1 + 3z}{(z-1)^2 + 4z(z-1) + 5z^2} $$
 
 $$ G(z) = \frac{z-1 + 3z}{z^2 - 2z + 1 + 4z^2 - 4z + 5z^2} = \frac{4z - 1}{10z^2 - 6z + 1} $$
+
 Ahora se multiplica el numerador y denominador por $z^2$ para obtener la función discreta.
 
 $$ G(z) = \frac{4z^3 - z^2}{10z^2 - 6z + 1} $$
