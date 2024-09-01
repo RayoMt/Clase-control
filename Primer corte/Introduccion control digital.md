@@ -99,11 +99,12 @@ Por lo general existen 2 tipos de conversión
 
 para calcular el voltaje de salida de las resistencias ponderadas se tiene la siguiente ecuación 
 
-$$ Vo= -Rf(\frac{V1}{R}+\frac{V2}{2R}+\frac{V3}{4R}+...\frac{Vn}{R^N})$$
+$$Vo= -Rf(\frac{V1}{R}+\frac{V2}{2R}+\frac{V3}{4R}+...\frac{Vn}{R^N})$$
 
 Donde los valores de las resistencias se deben tomar en orden de K para evitar posibles errores
 La cantidad de bits o numeros de circuitos que se encuentren cerrado indicara el bit que se estara representando, es decir que si solo se encuentra el bit N° 2 cerrado se indicara el valor 0100 que se representara de la siguiente manera 
-$$ Vo= -Rf(\frac{0}{R}+\frac{V2}{2R}+\frac{0}{4R}+...\frac{0}{R^N})$$
+
+$$Vo= -Rf(\frac{0}{R}+\frac{V2}{2R}+\frac{0}{4R}+...\frac{0}{R^N})$$
 
 asi indicaremos que es el valor 0100 el que se esta representando en las resistencias ponderadas
 
