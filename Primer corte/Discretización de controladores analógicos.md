@@ -189,7 +189,7 @@ $$ s \approx \frac{z-1}{Tz}$$
 
 Se asume el periodo de muestreo $(T)$ como $T=1$, y se sustituye el valor de $s$ a su aproximación.
 
-$$ G(s) = \frac{s + 3}{s^2 + 4s + 5} \approx \frac{\frac{z-1}{z} + 3}{\left\lbrace\frac{z-1}{z}\right\rbrace2 + 4\left\lbracefrac{z-1}{z}\right\rbrace+ 5} $$
+$$ G(s) = \frac{s + 3}{s^2 + 4s + 5} \approx \frac{\frac{z-1}{z} + 3}{\left\lbrace(\frac{z-1}{z}\right\rbrace)^2 + 4\left(\frac{z-1}{z}\right) + 5} $$
 
 Simplificando el numerador y el denominador:
 
