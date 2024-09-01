@@ -7,6 +7,7 @@ La discretización convierte un sistema de control analógico continuo en uno di
 
 ## 1. Método de invarianza al impulso
 Es una técnica utilizada en la conversión de sistemas continuos a sistemas discretos, asegurando que la respuesta al impulso del filtro digital sea igual a la del filtro analógico, escalada por la tasa de muestreo, es decir que al aplicar un impulso la salida del sistema es igual a la función de transferencia.
+
 ![Invarianza al impulso](./img/impulso.png)
 
 $$C(z) = TZ\left\lbrace\mathcal{L}^{-1}\{C(s)\} \mid_{t=KT} \right\rbrace$$
@@ -40,6 +41,7 @@ $$C(z) = T\left\lbrace \frac{z}{2z - 1} + \frac{4z}{4z - 1}\right\rbrace$$
 ## 2. Método de invarianza al paso
 Se refiere a un método en el que se asegura que la respuesta al escalón del sistema discreto sea igual a la del sistema continuo.
 Este método es menos común que la invarianza de impulso y se utiliza principalmente en aplicaciones donde la respuesta al escalón es más crítica que la respuesta al impulso.
+
 ![Invarianza al paso](./img/paso.jpg)
 
 $$C(z) = \frac{z-1}{z}Z\left\lbrace\mathcal{L}^{-1} \left\lbrace C(s) \frac{1}{s} \right\rbrace\right\rbrace$$
@@ -103,6 +105,7 @@ $$X(s)=X(z)$$
 $$s\approx\frac{z-1}{T}$$
 
 Cabe aclarar que un controlador estable en tiempo continuo no necesariamente va a ser estable en tiempo discreto.
+
 ![Euler adelante](./img/euler%20adelante.png)
 
 ## 4. Euler hacia atrás
@@ -140,6 +143,7 @@ $$\frac{z}{z}\cdot\frac{1-z^{-1}}{T}=\frac{z-1}{Tz}$$
 $$s\approx\frac{z-1}{Tz}$$
 
 En este método un controlador estable en tiempo continuo es estable en tiempo discreto
+
 ![Euler atras](./img/euler%20atras.png)
 
 ## 5. Método trapezoidal "Tustin"
@@ -185,7 +189,7 @@ $$ s \approx \frac{z-1}{Tz}$$
 
 Se asume el periodo de muestreo $(T)$ como $T=1$, y se sustituye el valor de $s$ a su aproximación.
 
-$$ G(s) = \frac{s + 3}{s^2 + 4s + 5} \approx \frac{\frac{z-1}{z} + 3}{\left\lbracefrac{z-1}{z}\right\rbrace2 + 4\left\lbracefrac{z-1}{z}\right\rbrace+ 5} $$
+$$ G(s) = \frac{s + 3}{s^2 + 4s + 5} \approx \frac{\frac{z-1}{z} + 3}{\left\lbrace\frac{z-1}{z}\right\rbrace2 + 4\left\lbracefrac{z-1}{z}\right\rbrace+ 5} $$
 
 Simplificando el numerador y el denominador:
 
