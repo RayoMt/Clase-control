@@ -79,11 +79,11 @@ $D$ sera la matriz de transmision directa , muestra las relaciones directas entr
 
 Teniendo en cuenta el siguiente problema de masa resorte amortiguador:
 
-![Ejemplo](C:/Users/nicol/OneDrive/Escritorio/TRABAJOS%20U/CONTROL%202/mark%20downs/mark%20down%203er%20corte/ESPACIO%20DE%20ESTADOS/ejemplo%201.png)
+![Ejemplo](./ejemplo.png)
 
 Realizando el diagrama de fuerzas de este problema:
 
-![Ejemplo diagrama de fuerzas](C:/Users/nicol/OneDrive/Escritorio/TRABAJOS%20U/CONTROL%202/mark%20downs/mark%20down%203er%20corte/ESPACIO%20DE%20ESTADOS/diagrama%20fuerzas%20ejemplo%201.png)
+![Ejemplo diagrama de fuerzas](./diagrama_fuerzas_ejemplo.png)
 
 Donde la fuerza $u$ es la encargada de sacar del reposo el sistema, por ende nuestro resorte $k$ se expandira y por la reaccion del mismo ejercera una fuerza en sentido contrario a $u$ para volver a su estado normal, y teniendo en cuenta que nuestro amortiguador $B$ siempre se opone a la fuerza del movimiento a la que se le esta aplicando $u$ 
 
