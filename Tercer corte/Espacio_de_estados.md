@@ -83,7 +83,7 @@ Teniendo en cuenta el siguiente problema de masa resorte amortiguador:
 
 Realizando el diagrama de fuerzas de este problema:
 
-![Ejemplo diagrama de fuerzas](./diagrama_fuerzas_ejemplo.png)
+![Ejemplo diagrama de fuerzas](./ejemplo_2.png)
 
 Donde la fuerza $u$ es la encargada de sacar del reposo el sistema, por ende nuestro resorte $k$ se expandira y por la reaccion del mismo ejercera una fuerza en sentido contrario a $u$ para volver a su estado normal, y teniendo en cuenta que nuestro amortiguador $B$ siempre se opone a la fuerza del movimiento a la que se le esta aplicando $u$ 
 
